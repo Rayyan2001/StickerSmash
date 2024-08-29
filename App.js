@@ -1,25 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import React, { useEffect } from 'react';
-import Onboarding from './components/Onboarding';
-import SplashScreen from 'react-native-splash-screen';
+import { StyleSheet, Text, View } from "react-native";
+import Onboarding from "./components/Onboarding";
+import HomePage from "./components/HomePage";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import hello from "./hello";
 
-
+const Stack = createStackNavigator();
 export default function App() {
-
-
   return (
-    <View style={styles.container}>
-      <Onboarding/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding">
+        <Stack.Screen name="Onboarding" component={Onboarding} />
+        <Stack.Screen name="HomePage" component={HomePage} />
+
+        
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
