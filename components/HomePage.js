@@ -36,6 +36,15 @@ export default HomePage = () => {
             Previous
           </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity style={styles.prev}>
+          <Text
+            style={styles.prevText}
+            onPress={() => navigation.navigate("AnimationButton")}
+          >
+            Next
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

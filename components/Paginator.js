@@ -9,13 +9,14 @@ import {
 } from "react-native";
 import React from "react";
 import HomePage from "./HomePage";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
+import AnimationButton from "./AnimationButton";
 
 export default function Paginator({ data, scrollX }) {
   const { width } = useWindowDimensions();
   const navigation = useNavigation(); //
   return (
-    <View style= {styles.container}>
+    <View style={styles.container}>
       <View
         style={{ flexDirection: "row", justifyContent: "center", height: 64 }}
       >
@@ -45,11 +46,22 @@ export default function Paginator({ data, scrollX }) {
 
       <View style={styles.skipContainer}>
         <TouchableOpacity style={styles.skip}>
-          <Text  style={styles.skipText}
-            
+          <Text
+            style={styles.skipText}
             onPress={() => navigation.navigate("HomePage")}
           >
             Skip {"-->"}
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.skipContain}>
+        <TouchableOpacity style={styles.skip}>
+          <Text
+            style={styles.skipToAnimation}
+            onPress={() => navigation.navigate("AnimationButton")}
+          >
+            Skip to Animation Page 
           </Text>
         </TouchableOpacity>
       </View>
@@ -71,6 +83,13 @@ const styles = StyleSheet.create({
     right: 10,
   },
 
+  skipContain: {
+    position:"absolute",
+    bottom: 100,
+    right: 100,
+   
+  },
+
   skip: {
     paddingVertical: 5,
     paddingHorizontal: 10,
@@ -81,5 +100,9 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
   },
-  
+
+  skipToAnimation: {
+ textDecorationLine: "underline",
+ fontWeight: "bold"
+  }
 });
