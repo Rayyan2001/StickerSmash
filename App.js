@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AnimationButton from "./components/AnimationButton";
-import hello from "./hello";
+import BottomTabs from "./components/BottomTabs";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
         <Stack.Screen name="Onboarding" component={Onboarding} screenOptions={false}/>
         <Stack.Screen name="HomePage" component={HomePage} screenOptions={false}/>
         <Stack.Screen name="AnimationButton" component={AnimationButton} screenOptions={false}/>
-
+        <Stack.Screen name="BottomTabs" component={BottomTabs} screenOptions={false}/>
         
       </Stack.Navigator>
     </NavigationContainer>
