@@ -8,9 +8,7 @@ import {
   Button,
 } from "react-native";
 import React from "react";
-import HomePage from "./HomePage";
 import { useNavigation } from "@react-navigation/native";
-import AnimationButton from "./AnimationButton";
 
 export default function Paginator({ data, scrollX }) {
   const { width } = useWindowDimensions();
@@ -48,13 +46,13 @@ export default function Paginator({ data, scrollX }) {
         <TouchableOpacity style={styles.skip}>
           <Text
             style={styles.skipText}
-            onPress={() => navigation.navigate("HomePage")}
+            onPress={() => navigation.navigate("AnimationButton")}
           >
             Skip {"-->"}
           </Text>
         </TouchableOpacity>
       </View>
-
+{/* 
       <View style={styles.skipContain}>
         <TouchableOpacity style={styles.skip}>
           <Text
@@ -64,7 +62,7 @@ export default function Paginator({ data, scrollX }) {
             Skip to Animation Page 
           </Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 }

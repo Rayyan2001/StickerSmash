@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import slides from "../slides.js";
 import OnboardingItem from "../components/OnboardingItem.js";
 import Paginator from "./Paginator.js";
-import hello from "../hello.js";
+
 
 export default Onboarding = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

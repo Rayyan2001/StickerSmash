@@ -8,7 +8,7 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
-import AnimationButton from "./AnimationButton";
+import AnimationButton from "../components/AnimationButton";
 
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
