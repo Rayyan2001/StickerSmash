@@ -3,6 +3,8 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
+import PayPal from "./payment/PayPal";
+
 
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
@@ -53,11 +55,19 @@ const TabButton = (props) => {
 };
 
 // Define AnimationButton before referencing it
+
+
 const AnimationButton = () => {
   return (
     <Animatable.View style={{color: "#000000"}}>
      
     </Animatable.View>
+  );
+};
+
+const Paypa = () => {
+  return (
+   <PayPal />
   );
 };
 
@@ -78,6 +88,16 @@ const TabArr = [
     inActiveIcon: "checkmark-outline", // Ionicons "checkmark-outline" for inactive state
     component: AnimationButton,
   },
+
+  {
+    route: "PayPal",
+    label: "PayPal",
+    type: Ionicons,
+    activeIcon: "card", // Ionicons "card" icon for active state
+    inActiveIcon: "card-outline", // Ionicons "card-outline" for inactive state
+    component: Paypa,
+  },
+  
 ];
 
 const Tab = createBottomTabNavigator();

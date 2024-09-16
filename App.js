@@ -1,25 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Onboarding from "./components/Onboarding";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AnimationButton from "./components/AnimationButton";
+import PayPal from './components/payment/PayPal';
 
 const Stack = createStackNavigator();
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding" screenOptions={false}>
+      <Stack.Navigator initialRouteName="Onboarding">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
-          screenOptions={false}
         />
-
         <Stack.Screen
           name="AnimationButton"
           component={AnimationButton}
-          screenOptions={false}
         />
+       
+        {/* <Stack.Screen name="PayPal" component={PayPal} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
